@@ -256,7 +256,7 @@ img{
 
 .canva{ width:95%; }
 .video{ width:85%; }
-.social{ width:90%; }
+.social{ width:70%; }
 
 /* ================= PROJETS ================= */
 
@@ -356,6 +356,39 @@ img{
     background:#D4AF37;
     color:black;
 }
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .contact-container{
+        grid-template-columns:1fr;
+    }
+
+}
+
+/* ================= SOCIAL ================= */
+
+.social-icons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.social-icons a{
+    text-decoration:none;
+    color:#D4AF37;
+    border:1px solid #D4AF37;
+    padding:12px 20px;
+    border-radius:30px;
+    transition:0.3s;
+}
+
+.social-icons a:hover{
+    background:#D4AF37;
+    color:black;
+}
 /* CONTACT */
 
 .contact{
@@ -407,39 +440,6 @@ button{
 
 button:hover{
     transform:translateY(-5px);
-}
-
-/* RESPONSIVE */
-
-@media(max-width:900px){
-
-    .contact-container{
-        grid-template-columns:1fr;
-    }
-
-}
-
-/* ================= SOCIAL ================= */
-
-.social-icons{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
-}
-
-.social-icons a{
-    text-decoration:none;
-    color:#D4AF37;
-    border:1px solid #D4AF37;
-    padding:12px 20px;
-    border-radius:30px;
-    transition:0.3s;
-}
-
-.social-icons a:hover{
-    background:#D4AF37;
-    color:black;
 }
 
 /* ================= FOOTER ================= */
