@@ -313,13 +313,14 @@
 
     <form id="contact-form">
 
-    <input type="text" id="name" placeholder="Votre nom" required>
+    <input type="text" id="nom" placeholder="Votre nom" name="nom" required>
 
-    <input type="email" id="email" placeholder="Votre email" required>
+    <input type="email" id="email" placeholder="Votre email" name="email" required>
 
-    <textarea id="message" placeholder="Votre message" required></textarea>
+    <textarea id="message" placeholder="Votre message" name="message" required></textarea>
 
     <button type="submit">Envoyer</button>
+        <p id="form-status"></p>
 
 </form>
 
@@ -333,35 +334,10 @@
         <p>© 2026 Tous droits réservés</p>
 
     </footer>
-   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyCMtpZOezl3eqfSigyLRZ7ADlMIu5y1pVs",
-  authDomain: "portfolio-contact-ee909.firebaseapp.com",
-  projectId: "portfolio-contact-ee909",
-  storageBucket: "portfolio-contact-ee909.firebasestorage.app",
-  messagingSenderId: "700226846616",
-  appId: "1:700226846616:web:4d9386465548c9c09ab5ed",
-  measurementId: "G-2G95V93R20"
-};
-    <script>
-
-document.getElementById("contact-form").addEventListener("submit", function(e){
-
-    e.preventDefault();
-
-    db.collection("messages").add({
-        nom: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        message: document.getElementById("message").value,
-        date: new Date()
-    });
-
-    alert("Message envoyé !");
-    this.reset();
-
-});
 
 </script>
+<script type="module" src="formulaire-contact.js"></script>
+
 
 </body>
 </html>
