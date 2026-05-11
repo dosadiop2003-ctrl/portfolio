@@ -311,13 +311,13 @@
 
     </div>
 
-    <form action="https://formspree.io/f/xrejrazy" method="POST">
+    <form id="contact-form">
 
-    <input type="text" name="name" placeholder="Votre nom" required>
+    <input type="text" id="name" placeholder="Votre nom" required>
 
-    <input type="email" name="email" placeholder="Votre email" required>
+    <input type="email" id="email" placeholder="Votre email" required>
 
-    <textarea name="message" rows="6" placeholder="Votre message" required></textarea>
+    <textarea id="message" placeholder="Votre message" required></textarea>
 
     <button type="submit">Envoyer</button>
 
@@ -334,6 +334,48 @@
 
     </footer>
     <script src="fichier.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"></script>
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCMtpZOezl3eqfSigyLRZ7ADlMIu5y1pVs",
+  authDomain: "portfolio-contact-ee909.firebaseapp.com",
+  projectId: "portfolio-contact-ee909",
+  storageBucket: "portfolio-contact-ee909.firebasestorage.app",
+  messagingSenderId: "700226846616",
+  appId: "1:700226846616:web:4d9386465548c9c09ab5ed",
+  measurementId: "G-2G95V93R20"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+    <script>
+
+document.getElementById("contact-form").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    db.collection("messages").add({
+        nom: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value,
+        date: new Date()
+    });
+
+    alert("Message envoyé !");
+    this.reset();
+
+});
+
+</script>
 
 </body>
 </html>
